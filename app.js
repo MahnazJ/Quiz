@@ -33,7 +33,7 @@ form.addEventListener('submit', e => {
 
 let loader = document.querySelector('#loader');
 
-function loadNow(opacity) {
+const loadNow = (opacity) => {
     if (opacity <= 0) {
         displayContent();
     } else {
@@ -42,14 +42,14 @@ function loadNow(opacity) {
             loadNow(opacity - 0.04);
         }, 50);
     }
-}
+};
 
-function displayContent() {
+const displayContent = () => {
     loader.style.display = 'none';
     document.getElementById('content').style.display = 'block';
-}
+};
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     loader = document.getElementById('loader');
     loadNow(1);
 });
